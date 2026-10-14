@@ -1,0 +1,4339 @@
+{
+ "_readme": "Game values. -1 or empty text = Not configured. See Assets/FTM/README.md. Team names are altered versions of the 2026 F1 teams; driver ratings are game estimates.",
+ "championshipName": "World Formula Championship",
+ "rulesVersion": "FIA 2026 F1 Sporting Regulations, Section B, Issue 09 (2026-10-01)",
+ "overallFormula": "average",
+ "raceOperationsPerRace": 900000,
+ "seasonRules": {
+  "winterLoss": 2,
+  "fundPerPoint": 800000,
+  "rookieDrivers": 6,
+  "rookieEngineers": 4,
+  "rookieCoordinators": 2,
+  "rivalRenewChance": 65
+ },
+ "releaseFee": 2000000,
+ "driverTraining": {
+  "cost": 750000,
+  "durationEvents": 1,
+  "gain": 1
+ },
+ "coordinatorStudy": {
+  "cost": 600000,
+  "durationEvents": 2,
+  "gain": 1
+ },
+ "carUpgrade": {
+  "cost": 3000000,
+  "durationEvents": 1,
+  "gain": 1
+ },
+ "pitCrewUpgrade": {
+  "cost": 1000000,
+  "durationEvents": 1,
+  "gain": 2
+ },
+ "prizeMoney": [
+  1200000,
+  900000,
+  700000,
+  550000,
+  450000,
+  350000,
+  280000,
+  200000,
+  150000,
+  100000
+ ],
+ "racePoints": [
+  25,
+  18,
+  15,
+  12,
+  10,
+  8,
+  6,
+  4,
+  2,
+  1
+ ],
+ "sponsorOffersMin": 1,
+ "sponsorOffersMax": 3,
+ "defaultDifficulty": 2,
+ "difficulties": [
+  {
+   "name": "Super Easy",
+   "rivalOffset": -12
+  },
+  {
+   "name": "Easy",
+   "rivalOffset": -6
+  },
+  {
+   "name": "Normal",
+   "rivalOffset": 0
+  },
+  {
+   "name": "Hard",
+   "rivalOffset": 4
+  },
+  {
+   "name": "XTREME",
+   "rivalOffset": 8
+  }
+ ],
+ "teams": [
+  {
+   "id": "mer",
+   "name": "Silver Arrow GP",
+   "color": "#27F4D2",
+   "logo": 0,
+   "startingBudget": 14000000,
+   "carParts": [
+    88,
+    88,
+    87,
+    87,
+    87,
+    91
+   ],
+   "drivers": [
+    "d_rus",
+    "d_ant"
+   ],
+   "engineers": [
+    "e_mer1",
+    "e_mer2",
+    "e_mer3"
+   ],
+   "coordinator": "c_wol",
+   "pitCrew": 84
+  },
+  {
+   "id": "fer",
+   "name": "Scuderia Rossa",
+   "color": "#E8002D",
+   "logo": 1,
+   "startingBudget": 15000000,
+   "carParts": [
+    87,
+    85,
+    85,
+    85,
+    87,
+    87
+   ],
+   "drivers": [
+    "d_lec",
+    "d_ham"
+   ],
+   "engineers": [
+    "e_fer1",
+    "e_fer2",
+    "e_fer3"
+   ],
+   "coordinator": "c_vas",
+   "pitCrew": 86
+  },
+  {
+   "id": "mcl",
+   "name": "Papaya Racing",
+   "color": "#FF8000",
+   "logo": 2,
+   "startingBudget": 16000000,
+   "carParts": [
+    87,
+    86,
+    85,
+    84,
+    86,
+    82
+   ],
+   "drivers": [
+    "d_nor",
+    "d_pia"
+   ],
+   "engineers": [
+    "e_mcl1",
+    "e_mcl2",
+    "e_mcl3"
+   ],
+   "coordinator": "c_stl",
+   "pitCrew": 90
+  },
+  {
+   "id": "rbr",
+   "name": "Raging Bull Racing",
+   "color": "#3671C6",
+   "logo": 3,
+   "startingBudget": 17000000,
+   "carParts": [
+    84,
+    84,
+    84,
+    82,
+    85,
+    79
+   ],
+   "drivers": [
+    "d_ver",
+    "d_had"
+   ],
+   "engineers": [
+    "e_rbr1",
+    "e_rbr2",
+    "e_rbr3"
+   ],
+   "coordinator": "c_mek",
+   "pitCrew": 89
+  },
+  {
+   "id": "alp",
+   "name": "Alpenglow F1",
+   "color": "#0093CC",
+   "logo": 4,
+   "startingBudget": 22000000,
+   "carParts": [
+    76,
+    78,
+    78,
+    80,
+    79,
+    77
+   ],
+   "drivers": [
+    "d_gas",
+    "d_col"
+   ],
+   "engineers": [
+    "e_alp1",
+    "e_alp2",
+    "e_alp3"
+   ],
+   "coordinator": "c_nie",
+   "pitCrew": 70
+  },
+  {
+   "id": "rb",
+   "name": "Junior Bulls",
+   "color": "#6692FF",
+   "logo": 5,
+   "startingBudget": 23000000,
+   "carParts": [
+    78,
+    78,
+    76,
+    78,
+    76,
+    76
+   ],
+   "drivers": [
+    "d_law",
+    "d_lin"
+   ],
+   "engineers": [
+    "e_rb1",
+    "e_rb2",
+    "e_rb3"
+   ],
+   "coordinator": "c_pem",
+   "pitCrew": 78
+  },
+  {
+   "id": "haa",
+   "name": "Haze F1 Team",
+   "color": "#B6BABD",
+   "logo": 6,
+   "startingBudget": 25000000,
+   "carParts": [
+    72,
+    73,
+    73,
+    74,
+    75,
+    77
+   ],
+   "drivers": [
+    "d_oco",
+    "d_bea"
+   ],
+   "engineers": [
+    "e_haa1",
+    "e_haa2",
+    "e_haa3"
+   ],
+   "coordinator": "c_kom",
+   "pitCrew": 68
+  },
+  {
+   "id": "wil",
+   "name": "Wilhelm Racing",
+   "color": "#64C4FF",
+   "logo": 7,
+   "startingBudget": 26000000,
+   "carParts": [
+    73,
+    73,
+    72,
+    70,
+    73,
+    77
+   ],
+   "drivers": [
+    "d_alb",
+    "d_sai"
+   ],
+   "engineers": [
+    "e_wil1",
+    "e_wil2",
+    "e_wil3"
+   ],
+   "coordinator": "c_vow",
+   "pitCrew": 74
+  },
+  {
+   "id": "aud",
+   "name": "Four Rings Motorsport",
+   "color": "#F50537",
+   "logo": 8,
+   "startingBudget": 28000000,
+   "carParts": [
+    70,
+    70,
+    71,
+    70,
+    72,
+    73
+   ],
+   "drivers": [
+    "d_hul",
+    "d_bor"
+   ],
+   "engineers": [
+    "e_aud1",
+    "e_aud2",
+    "e_aud3"
+   ],
+   "coordinator": "c_bin",
+   "pitCrew": 66
+  },
+  {
+   "id": "ast",
+   "name": "Emerald Martin",
+   "color": "#229971",
+   "logo": 9,
+   "startingBudget": 29000000,
+   "carParts": [
+    72,
+    72,
+    69,
+    69,
+    69,
+    69
+   ],
+   "drivers": [
+    "d_alo",
+    "d_str"
+   ],
+   "engineers": [
+    "e_ast1",
+    "e_ast2",
+    "e_ast3"
+   ],
+   "coordinator": "c_new",
+   "pitCrew": 72
+  },
+  {
+   "id": "cad",
+   "name": "Crest Motors GP",
+   "color": "#E6E6E6",
+   "logo": 10,
+   "startingBudget": 32000000,
+   "carParts": [
+    67,
+    67,
+    66,
+    67,
+    68,
+    67
+   ],
+   "drivers": [
+    "d_bot",
+    "d_per"
+   ],
+   "engineers": [
+    "e_cad1",
+    "e_cad2",
+    "e_cad3"
+   ],
+   "coordinator": "c_bud",
+   "pitCrew": 58
+  }
+ ],
+ "customTeam": {
+  "startingBudget": 55000000,
+  "carParts": [
+   65,
+   64,
+   64,
+   64,
+   64,
+   63
+  ],
+  "joinMode": "extra",
+  "color": "#F5D84A",
+  "pitCrew": 50
+ },
+ "customTeamNames": [
+  "Apex Racing",
+  "Thunderbolt GP",
+  "Velocity Works",
+  "Redline Motorsport",
+  "Phoenix F1 Team",
+  "Northern Lights Racing",
+  "Titan Grand Prix",
+  "Comet Racing",
+  "Iron Horse GP",
+  "Vortex Motorsport",
+  "Falcon Racing Team",
+  "Midnight Formula",
+  "Blue Comet GP",
+  "Kingdom Racing",
+  "Nitro Works",
+  "Eclipse GP"
+ ],
+ "drivers": [
+  {
+   "id": "d_nor",
+   "name": "Lando Norris",
+   "nationality": "GBR",
+   "age": 26,
+   "raceNumber": 4,
+   "salaryPerRace": 730000,
+   "signingBonus": 4400000,
+   "buyoutFee": 16100000,
+   "contractSeasons": 4,
+   "teamId": "mcl",
+   "stats": [
+    88,
+    92,
+    94,
+    92,
+    89
+   ],
+   "potential": [
+    93,
+    97,
+    96,
+    94,
+    94
+   ]
+  },
+  {
+   "id": "d_pia",
+   "name": "Oscar Piastri",
+   "nationality": "AUS",
+   "age": 25,
+   "raceNumber": 81,
+   "salaryPerRace": 690000,
+   "signingBonus": 4600000,
+   "buyoutFee": 15200000,
+   "contractSeasons": 4,
+   "teamId": "mcl",
+   "stats": [
+    90,
+    91,
+    91,
+    91,
+    87
+   ],
+   "potential": [
+    95,
+    93,
+    94,
+    96,
+    92
+   ]
+  },
+  {
+   "id": "d_rus",
+   "name": "George Russell",
+   "nationality": "GBR",
+   "age": 28,
+   "raceNumber": 63,
+   "salaryPerRace": 720000,
+   "signingBonus": 4600000,
+   "buyoutFee": 15800000,
+   "contractSeasons": 1,
+   "teamId": "mer",
+   "stats": [
+    91,
+    88,
+    88,
+    90,
+    88
+   ],
+   "potential": [
+    93,
+    91,
+    91,
+    92,
+    91
+   ]
+  },
+  {
+   "id": "d_ant",
+   "name": "Kimi Antonelli",
+   "nationality": "ITA",
+   "age": 20,
+   "raceNumber": 12,
+   "salaryPerRace": 470000,
+   "signingBonus": 3100000,
+   "buyoutFee": 10300000,
+   "contractSeasons": 2,
+   "teamId": "mer",
+   "stats": [
+    88,
+    90,
+    84,
+    83,
+    90
+   ],
+   "potential": [
+    96,
+    99,
+    95,
+    94,
+    99
+   ]
+  },
+  {
+   "id": "d_ver",
+   "name": "Max Verstappen",
+   "nationality": "NED",
+   "age": 29,
+   "raceNumber": 3,
+   "salaryPerRace": 950000,
+   "signingBonus": 6200000,
+   "buyoutFee": 20900000,
+   "contractSeasons": 3,
+   "teamId": "rbr",
+   "stats": [
+    95,
+    96,
+    94,
+    91,
+    94
+   ],
+   "potential": [
+    99,
+    99,
+    96,
+    95,
+    95
+   ]
+  },
+  {
+   "id": "d_had",
+   "name": "Isack Hadjar",
+   "nationality": "FRA",
+   "age": 22,
+   "raceNumber": 6,
+   "salaryPerRace": 210000,
+   "signingBonus": 1400000,
+   "buyoutFee": 4600000,
+   "contractSeasons": 1,
+   "teamId": "rbr",
+   "stats": [
+    82,
+    83,
+    82,
+    79,
+    84
+   ],
+   "potential": [
+    93,
+    92,
+    91,
+    90,
+    92
+   ]
+  },
+  {
+   "id": "d_lec",
+   "name": "Charles Leclerc",
+   "nationality": "MON",
+   "age": 29,
+   "raceNumber": 16,
+   "salaryPerRace": 720000,
+   "signingBonus": 4600000,
+   "buyoutFee": 15800000,
+   "contractSeasons": 4,
+   "teamId": "fer",
+   "stats": [
+    92,
+    91,
+    92,
+    89,
+    91
+   ],
+   "potential": [
+    93,
+    96,
+    92,
+    90,
+    94
+   ]
+  },
+  {
+   "id": "d_ham",
+   "name": "Lewis Hamilton",
+   "nationality": "GBR",
+   "age": 41,
+   "raceNumber": 44,
+   "salaryPerRace": 480000,
+   "signingBonus": 3000000,
+   "buyoutFee": 10600000,
+   "contractSeasons": 4,
+   "teamId": "fer",
+   "stats": [
+    88,
+    88,
+    92,
+    89,
+    83
+   ],
+   "potential": [
+    88,
+    88,
+    92,
+    89,
+    83
+   ]
+  },
+  {
+   "id": "d_alb",
+   "name": "Alexander Albon",
+   "nationality": "THA",
+   "age": 30,
+   "raceNumber": 23,
+   "salaryPerRace": 340000,
+   "signingBonus": 2400000,
+   "buyoutFee": 7500000,
+   "contractSeasons": 3,
+   "teamId": "wil",
+   "stats": [
+    84,
+    84,
+    86,
+    84,
+    82
+   ],
+   "potential": [
+    86,
+    85,
+    87,
+    86,
+    85
+   ]
+  },
+  {
+   "id": "d_sai",
+   "name": "Carlos Sainz",
+   "nationality": "ESP",
+   "age": 32,
+   "raceNumber": 55,
+   "salaryPerRace": 490000,
+   "signingBonus": 2500000,
+   "buyoutFee": 10800000,
+   "contractSeasons": 2,
+   "teamId": "wil",
+   "stats": [
+    86,
+    85,
+    86,
+    88,
+    85
+   ],
+   "potential": [
+    87,
+    88,
+    88,
+    89,
+    86
+   ]
+  },
+  {
+   "id": "d_law",
+   "name": "Liam Lawson",
+   "nationality": "NZL",
+   "age": 24,
+   "raceNumber": 30,
+   "salaryPerRace": 210000,
+   "signingBonus": 1100000,
+   "buyoutFee": 4600000,
+   "contractSeasons": 2,
+   "teamId": "rb",
+   "stats": [
+    81,
+    80,
+    75,
+    81,
+    83
+   ],
+   "potential": [
+    88,
+    86,
+    83,
+    86,
+    88
+   ]
+  },
+  {
+   "id": "d_lin",
+   "name": "Arvid Lindblad",
+   "nationality": "GBR",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 140000,
+   "signingBonus": 900000,
+   "buyoutFee": 3100000,
+   "contractSeasons": 1,
+   "teamId": "rb",
+   "stats": [
+    80,
+    78,
+    73,
+    73,
+    81
+   ],
+   "potential": [
+    93,
+    94,
+    90,
+    89,
+    95
+   ]
+  },
+  {
+   "id": "d_alo",
+   "name": "Fernando Alonso",
+   "nationality": "ESP",
+   "age": 45,
+   "raceNumber": 14,
+   "salaryPerRace": 450000,
+   "signingBonus": 2700000,
+   "buyoutFee": 9900000,
+   "contractSeasons": 2,
+   "teamId": "ast",
+   "stats": [
+    89,
+    87,
+    89,
+    87,
+    83
+   ],
+   "potential": [
+    89,
+    87,
+    89,
+    87,
+    83
+   ]
+  },
+  {
+   "id": "d_str",
+   "name": "Lance Stroll",
+   "nationality": "CAN",
+   "age": 27,
+   "raceNumber": 18,
+   "salaryPerRace": 140000,
+   "signingBonus": 800000,
+   "buyoutFee": 3100000,
+   "contractSeasons": 2,
+   "teamId": "ast",
+   "stats": [
+    78,
+    75,
+    75,
+    76,
+    81
+   ],
+   "potential": [
+    80,
+    78,
+    80,
+    79,
+    81
+   ]
+  },
+  {
+   "id": "d_oco",
+   "name": "Esteban Ocon",
+   "nationality": "FRA",
+   "age": 30,
+   "raceNumber": 31,
+   "salaryPerRace": 210000,
+   "signingBonus": 1200000,
+   "buyoutFee": 4600000,
+   "contractSeasons": 2,
+   "teamId": "haa",
+   "stats": [
+    83,
+    81,
+    80,
+    80,
+    81
+   ],
+   "potential": [
+    85,
+    81,
+    82,
+    85,
+    82
+   ]
+  },
+  {
+   "id": "d_bea",
+   "name": "Oliver Bearman",
+   "nationality": "GBR",
+   "age": 21,
+   "raceNumber": 87,
+   "salaryPerRace": 210000,
+   "signingBonus": 1400000,
+   "buyoutFee": 4600000,
+   "contractSeasons": 1,
+   "teamId": "haa",
+   "stats": [
+    85,
+    80,
+    79,
+    76,
+    80
+   ],
+   "potential": [
+    92,
+    90,
+    87,
+    88,
+    93
+   ]
+  },
+  {
+   "id": "d_hul",
+   "name": "Nico Hulkenberg",
+   "nationality": "GER",
+   "age": 39,
+   "raceNumber": 27,
+   "salaryPerRace": 210000,
+   "signingBonus": 1400000,
+   "buyoutFee": 4600000,
+   "contractSeasons": 3,
+   "teamId": "aud",
+   "stats": [
+    80,
+    84,
+    84,
+    84,
+    78
+   ],
+   "potential": [
+    80,
+    84,
+    84,
+    84,
+    78
+   ]
+  },
+  {
+   "id": "d_bor",
+   "name": "Gabriel Bortoleto",
+   "nationality": "BRA",
+   "age": 22,
+   "raceNumber": 5,
+   "salaryPerRace": 140000,
+   "signingBonus": 900000,
+   "buyoutFee": 3100000,
+   "contractSeasons": 4,
+   "teamId": "aud",
+   "stats": [
+    79,
+    81,
+    80,
+    76,
+    79
+   ],
+   "potential": [
+    90,
+    91,
+    88,
+    88,
+    91
+   ]
+  },
+  {
+   "id": "d_gas",
+   "name": "Pierre Gasly",
+   "nationality": "FRA",
+   "age": 30,
+   "raceNumber": 10,
+   "salaryPerRace": 340000,
+   "signingBonus": 1700000,
+   "buyoutFee": 7500000,
+   "contractSeasons": 4,
+   "teamId": "alp",
+   "stats": [
+    84,
+    87,
+    85,
+    82,
+    82
+   ],
+   "potential": [
+    88,
+    87,
+    85,
+    87,
+    86
+   ]
+  },
+  {
+   "id": "d_col",
+   "name": "Franco Colapinto",
+   "nationality": "ARG",
+   "age": 23,
+   "raceNumber": 43,
+   "salaryPerRace": 150000,
+   "signingBonus": 900000,
+   "buyoutFee": 3300000,
+   "contractSeasons": 3,
+   "teamId": "alp",
+   "stats": [
+    78,
+    80,
+    73,
+    73,
+    81
+   ],
+   "potential": [
+    85,
+    87,
+    82,
+    81,
+    88
+   ]
+  },
+  {
+   "id": "d_bot",
+   "name": "Valtteri Bottas",
+   "nationality": "FIN",
+   "age": 37,
+   "raceNumber": 77,
+   "salaryPerRace": 200000,
+   "signingBonus": 1100000,
+   "buyoutFee": 4400000,
+   "contractSeasons": 3,
+   "teamId": "cad",
+   "stats": [
+    82,
+    81,
+    80,
+    84,
+    78
+   ],
+   "potential": [
+    82,
+    81,
+    80,
+    84,
+    78
+   ]
+  },
+  {
+   "id": "d_per",
+   "name": "Sergio Perez",
+   "nationality": "MEX",
+   "age": 36,
+   "raceNumber": 11,
+   "salaryPerRace": 200000,
+   "signingBonus": 1200000,
+   "buyoutFee": 4400000,
+   "contractSeasons": 1,
+   "teamId": "cad",
+   "stats": [
+    80,
+    79,
+    83,
+    81,
+    77
+   ],
+   "potential": [
+    80,
+    79,
+    83,
+    81,
+    77
+   ]
+  },
+  {
+   "id": "d_tsu",
+   "name": "Yuki Tsunoda",
+   "nationality": "JPN",
+   "age": 26,
+   "raceNumber": -1,
+   "salaryPerRace": 210000,
+   "signingBonus": 1100000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    82,
+    81,
+    79,
+    79,
+    79
+   ],
+   "potential": [
+    85,
+    86,
+    84,
+    80,
+    81
+   ]
+  },
+  {
+   "id": "d_doo",
+   "name": "Jack Doohan",
+   "nationality": "AUS",
+   "age": 23,
+   "raceNumber": -1,
+   "salaryPerRace": 80000,
+   "signingBonus": 500000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    74,
+    76,
+    73,
+    70,
+    77
+   ],
+   "potential": [
+    83,
+    84,
+    80,
+    80,
+    84
+   ]
+  },
+  {
+   "id": "d_zho",
+   "name": "Zhou Guanyu",
+   "nationality": "CHN",
+   "age": 27,
+   "raceNumber": -1,
+   "salaryPerRace": 130000,
+   "signingBonus": 700000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    77,
+    74,
+    77,
+    75,
+    77
+   ],
+   "potential": [
+    80,
+    76,
+    77,
+    76,
+    77
+   ]
+  },
+  {
+   "id": "d_dru",
+   "name": "Felipe Drugovich",
+   "nationality": "BRA",
+   "age": 26,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 600000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    77,
+    77,
+    75,
+    73,
+    73
+   ],
+   "potential": [
+    80,
+    81,
+    78,
+    77,
+    77
+   ]
+  },
+  {
+   "id": "d_ves",
+   "name": "Frederik Vesti",
+   "nationality": "DEN",
+   "age": 24,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 600000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    73,
+    72,
+    74,
+    73,
+    73
+   ],
+   "potential": [
+    83,
+    78,
+    82,
+    81,
+    82
+   ]
+  },
+  {
+   "id": "d_aro",
+   "name": "Paul Aron",
+   "nationality": "EST",
+   "age": 22,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 600000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    72,
+    73,
+    72,
+    75,
+    73
+   ],
+   "potential": [
+    83,
+    84,
+    83,
+    84,
+    83
+   ]
+  },
+  {
+   "id": "d_cra",
+   "name": "Jak Crawford",
+   "nationality": "USA",
+   "age": 21,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 360000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    71,
+    77,
+    70,
+    70,
+    72
+   ],
+   "potential": [
+    82,
+    86,
+    83,
+    79,
+    84
+   ]
+  },
+  {
+   "id": "d_iwa",
+   "name": "Ayumu Iwasa",
+   "nationality": "JPN",
+   "age": 25,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 500000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    74,
+    75,
+    74,
+    76,
+    71
+   ],
+   "potential": [
+    78,
+    78,
+    78,
+    82,
+    79
+   ]
+  },
+  {
+   "id": "d_for",
+   "name": "Leonardo Fornaroli",
+   "nationality": "ITA",
+   "age": 21,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 360000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    69,
+    76,
+    71,
+    70,
+    79
+   ],
+   "potential": [
+    86,
+    88,
+    83,
+    84,
+    89
+   ]
+  },
+  {
+   "id": "d_bro",
+   "name": "Luke Browning",
+   "nationality": "GBR",
+   "age": 24,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 500000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    68,
+    75,
+    70,
+    72,
+    70
+   ],
+   "potential": [
+    80,
+    83,
+    80,
+    83,
+    81
+   ]
+  },
+  {
+   "id": "d_mar",
+   "name": "Victor Martins",
+   "nationality": "FRA",
+   "age": 25,
+   "raceNumber": -1,
+   "salaryPerRace": 80000,
+   "signingBonus": 500000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    71,
+    72,
+    68,
+    70,
+    74
+   ],
+   "potential": [
+    81,
+    78,
+    76,
+    78,
+    78
+   ]
+  },
+  {
+   "id": "d_tso",
+   "name": "Nikola Tsolov",
+   "nationality": "BUL",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 360000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    74,
+    76,
+    72,
+    72,
+    76
+   ],
+   "potential": [
+    92,
+    91,
+    91,
+    89,
+    97
+   ]
+  },
+  {
+   "id": "d_min",
+   "name": "Gabriele Mini",
+   "nationality": "ITA",
+   "age": 21,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 360000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    72,
+    72,
+    72,
+    73,
+    76
+   ],
+   "potential": [
+    85,
+    87,
+    89,
+    87,
+    92
+   ]
+  },
+  {
+   "id": "d_cam",
+   "name": "Rafael Camara",
+   "nationality": "BRA",
+   "age": 21,
+   "raceNumber": -1,
+   "salaryPerRace": 100000,
+   "signingBonus": 400000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    72,
+    73,
+    76,
+    70,
+    74
+   ],
+   "potential": [
+    87,
+    92,
+    89,
+    87,
+    90
+   ]
+  },
+  {
+   "id": "d_dun",
+   "name": "Alexander Dunne",
+   "nationality": "IRL",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 80000,
+   "signingBonus": 320000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    69,
+    74,
+    69,
+    72,
+    76
+   ],
+   "potential": [
+    85,
+    87,
+    85,
+    86,
+    90
+   ]
+  },
+  {
+   "id": "d_leo",
+   "name": "Noel Leon",
+   "nationality": "MEX",
+   "age": 22,
+   "raceNumber": -1,
+   "salaryPerRace": 100000,
+   "signingBonus": 400000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    70,
+    70,
+    72,
+    68,
+    70
+   ],
+   "potential": [
+    84,
+    81,
+    84,
+    83,
+    80
+   ]
+  },
+  {
+   "id": "d_mai",
+   "name": "Kush Maini",
+   "nationality": "IND",
+   "age": 25,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 500000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    66,
+    70,
+    71,
+    72,
+    71
+   ],
+   "potential": [
+    75,
+    78,
+    78,
+    78,
+    76
+   ]
+  },
+  {
+   "id": "d_beg",
+   "name": "Dino Beganovic",
+   "nationality": "SWE",
+   "age": 22,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    68,
+    67,
+    67,
+    70,
+    73
+   ],
+   "potential": [
+    82,
+    83,
+    81,
+    83,
+    84
+   ]
+  },
+  {
+   "id": "d_vho",
+   "name": "Laurens van Hoepen",
+   "nationality": "NED",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    68,
+    68,
+    66,
+    70,
+    68
+   ],
+   "potential": [
+    84,
+    83,
+    83,
+    83,
+    86
+   ]
+  },
+  {
+   "id": "d_ste",
+   "name": "Martinius Stenshorne",
+   "nationality": "NOR",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    69,
+    70,
+    66,
+    64,
+    71
+   ],
+   "potential": [
+    85,
+    85,
+    83,
+    80,
+    88
+   ]
+  },
+  {
+   "id": "d_int",
+   "name": "Tasanapol Inthraphuvasak",
+   "nationality": "THA",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    67,
+    66,
+    67,
+    66,
+    69
+   ],
+   "potential": [
+    79,
+    78,
+    81,
+    79,
+    85
+   ]
+  },
+  {
+   "id": "d_dur",
+   "name": "Joshua Durksen",
+   "nationality": "PAR",
+   "age": 23,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 300000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    65,
+    65,
+    70,
+    65,
+    70
+   ],
+   "potential": [
+    75,
+    77,
+    78,
+    77,
+    78
+   ]
+  },
+  {
+   "id": "d_goe",
+   "name": "Oliver Goethe",
+   "nationality": "GER",
+   "age": 22,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    66,
+    67,
+    65,
+    67,
+    65
+   ],
+   "potential": [
+    77,
+    79,
+    77,
+    80,
+    79
+   ]
+  },
+  {
+   "id": "d_mon",
+   "name": "Sebastian Montoya",
+   "nationality": "COL",
+   "age": 21,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    67,
+    65,
+    64,
+    63,
+    66
+   ],
+   "potential": [
+    80,
+    78,
+    80,
+    77,
+    80
+   ]
+  },
+  {
+   "id": "d_her",
+   "name": "Colton Herta",
+   "nationality": "USA",
+   "age": 26,
+   "raceNumber": -1,
+   "salaryPerRace": 90000,
+   "signingBonus": 600000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    72,
+    69,
+    70,
+    73,
+    71
+   ],
+   "potential": [
+    79,
+    76,
+    79,
+    79,
+    81
+   ]
+  },
+  {
+   "id": "d_miy",
+   "name": "Ritomo Miyata",
+   "nationality": "JPN",
+   "age": 27,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 300000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    67,
+    66,
+    63,
+    67,
+    67
+   ],
+   "potential": [
+    73,
+    73,
+    69,
+    75,
+    73
+   ]
+  },
+  {
+   "id": "d_sla",
+   "name": "Freddie Slater",
+   "nationality": "GBR",
+   "age": 18,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    68,
+    70,
+    65,
+    67,
+    70
+   ],
+   "potential": [
+    97,
+    96,
+    91,
+    95,
+    94
+   ]
+  },
+  {
+   "id": "d_ugo",
+   "name": "Ugo Ugochukwu",
+   "nationality": "USA",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    66,
+    65,
+    68,
+    65,
+    66
+   ],
+   "potential": [
+    90,
+    90,
+    93,
+    89,
+    91
+   ]
+  },
+  {
+   "id": "d_riv",
+   "name": "Ernesto Rivera",
+   "nationality": "MEX",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    65,
+    61,
+    61,
+    63,
+    65
+   ],
+   "potential": [
+    84,
+    81,
+    80,
+    80,
+    86
+   ]
+  },
+  {
+   "id": "d_nae",
+   "name": "Theophile Nael",
+   "nationality": "FRA",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    62,
+    62,
+    65,
+    62,
+    64
+   ],
+   "potential": [
+    82,
+    84,
+    84,
+    83,
+    82
+   ]
+  },
+  {
+   "id": "d_bad",
+   "name": "Brando Badoer",
+   "nationality": "ITA",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    63,
+    61,
+    66,
+    58,
+    62
+   ],
+   "potential": [
+    83,
+    79,
+    84,
+    77,
+    81
+   ]
+  },
+  {
+   "id": "d_kat",
+   "name": "Taito Kato",
+   "nationality": "JPN",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    59,
+    62,
+    64,
+    60,
+    65
+   ],
+   "potential": [
+    83,
+    84,
+    84,
+    81,
+    87
+   ]
+  },
+  {
+   "id": "d_yam",
+   "name": "Hiyu Yamakoshi",
+   "nationality": "JPN",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    63,
+    62,
+    61,
+    62,
+    62
+   ],
+   "potential": [
+    86,
+    85,
+    82,
+    83,
+    86
+   ]
+  },
+  {
+   "id": "d_stm",
+   "name": "Noah Stromsted",
+   "nationality": "DEN",
+   "age": 19,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    58,
+    64,
+    58,
+    60,
+    65
+   ],
+   "potential": [
+    83,
+    87,
+    84,
+    83,
+    86
+   ]
+  },
+  {
+   "id": "d_tap",
+   "name": "Tuukka Taponen",
+   "nationality": "FIN",
+   "age": 20,
+   "raceNumber": -1,
+   "salaryPerRace": 50000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    60,
+    65,
+    63,
+    62,
+    65
+   ],
+   "potential": [
+    86,
+    87,
+    87,
+    87,
+    91
+   ]
+  }
+ ],
+ "engineers": [
+  {
+   "id": "e_mer1",
+   "name": "Noah Bianchi",
+   "nationality": "JPN",
+   "age": 41,
+   "salaryPerRace": 140000,
+   "signingBonus": 840000,
+   "buyoutFee": 2520000,
+   "contractSeasons": 2,
+   "teamId": "mer",
+   "stats": [
+    89,
+    86,
+    83,
+    84,
+    88,
+    86
+   ]
+  },
+  {
+   "id": "e_mer2",
+   "name": "Aiko Thorne",
+   "nationality": "ESP",
+   "age": 53,
+   "salaryPerRace": 129000,
+   "signingBonus": 770000,
+   "buyoutFee": 2320000,
+   "contractSeasons": 2,
+   "teamId": "mer",
+   "stats": [
+    89,
+    82,
+    80,
+    85,
+    83,
+    79
+   ]
+  },
+  {
+   "id": "e_mer3",
+   "name": "Tariq Russo",
+   "nationality": "NED",
+   "age": 37,
+   "salaryPerRace": 129000,
+   "signingBonus": 770000,
+   "buyoutFee": 2320000,
+   "contractSeasons": 1,
+   "teamId": "mer",
+   "stats": [
+    81,
+    81,
+    86,
+    89,
+    86,
+    81
+   ]
+  },
+  {
+   "id": "e_fer1",
+   "name": "Diego Haugen",
+   "nationality": "IND",
+   "age": 41,
+   "salaryPerRace": 143000,
+   "signingBonus": 860000,
+   "buyoutFee": 2570000,
+   "contractSeasons": 3,
+   "teamId": "fer",
+   "stats": [
+    85,
+    85,
+    86,
+    91,
+    83,
+    86
+   ]
+  },
+  {
+   "id": "e_fer2",
+   "name": "Ivy Sato",
+   "nationality": "NED",
+   "age": 43,
+   "salaryPerRace": 143000,
+   "signingBonus": 860000,
+   "buyoutFee": 2570000,
+   "contractSeasons": 1,
+   "teamId": "fer",
+   "stats": [
+    87,
+    88,
+    82,
+    92,
+    87,
+    86
+   ]
+  },
+  {
+   "id": "e_fer3",
+   "name": "Lina Moreau",
+   "nationality": "NGA",
+   "age": 53,
+   "salaryPerRace": 132000,
+   "signingBonus": 790000,
+   "buyoutFee": 2380000,
+   "contractSeasons": 1,
+   "teamId": "fer",
+   "stats": [
+    93,
+    86,
+    85,
+    85,
+    85,
+    82
+   ]
+  },
+  {
+   "id": "e_mcl1",
+   "name": "Sofia Sato",
+   "nationality": "FIN",
+   "age": 33,
+   "salaryPerRace": 119000,
+   "signingBonus": 710000,
+   "buyoutFee": 2140000,
+   "contractSeasons": 3,
+   "teamId": "mcl",
+   "stats": [
+    85,
+    78,
+    81,
+    86,
+    90,
+    84
+   ]
+  },
+  {
+   "id": "e_mcl2",
+   "name": "Sara Sinclair",
+   "nationality": "POR",
+   "age": 46,
+   "salaryPerRace": 119000,
+   "signingBonus": 710000,
+   "buyoutFee": 2140000,
+   "contractSeasons": 1,
+   "teamId": "mcl",
+   "stats": [
+    84,
+    82,
+    83,
+    78,
+    79,
+    80
+   ]
+  },
+  {
+   "id": "e_mcl3",
+   "name": "Emma Russo",
+   "nationality": "SWE",
+   "age": 38,
+   "salaryPerRace": 123000,
+   "signingBonus": 740000,
+   "buyoutFee": 2210000,
+   "contractSeasons": 2,
+   "teamId": "mcl",
+   "stats": [
+    81,
+    84,
+    89,
+    83,
+    81,
+    80
+   ]
+  },
+  {
+   "id": "e_rbr1",
+   "name": "Jonas Holm",
+   "nationality": "IND",
+   "age": 55,
+   "salaryPerRace": 130000,
+   "signingBonus": 780000,
+   "buyoutFee": 2340000,
+   "contractSeasons": 2,
+   "teamId": "rbr",
+   "stats": [
+    82,
+    87,
+    81,
+    80,
+    84,
+    84
+   ]
+  },
+  {
+   "id": "e_rbr2",
+   "name": "Rosa Strand",
+   "nationality": "NOR",
+   "age": 52,
+   "salaryPerRace": 138000,
+   "signingBonus": 830000,
+   "buyoutFee": 2480000,
+   "contractSeasons": 3,
+   "teamId": "rbr",
+   "stats": [
+    86,
+    80,
+    85,
+    88,
+    82,
+    83
+   ]
+  },
+  {
+   "id": "e_rbr3",
+   "name": "Leon Barlow",
+   "nationality": "BEL",
+   "age": 36,
+   "salaryPerRace": 118000,
+   "signingBonus": 710000,
+   "buyoutFee": 2120000,
+   "contractSeasons": 3,
+   "teamId": "rbr",
+   "stats": [
+    77,
+    81,
+    87,
+    81,
+    77,
+    83
+   ]
+  },
+  {
+   "id": "e_alp1",
+   "name": "Raj Navarro",
+   "nationality": "IND",
+   "age": 52,
+   "salaryPerRace": 112000,
+   "signingBonus": 670000,
+   "buyoutFee": 2020000,
+   "contractSeasons": 4,
+   "teamId": "alp",
+   "stats": [
+    75,
+    77,
+    77,
+    80,
+    84,
+    81
+   ]
+  },
+  {
+   "id": "e_alp2",
+   "name": "Sam Strand",
+   "nationality": "FIN",
+   "age": 31,
+   "salaryPerRace": 89000,
+   "signingBonus": 530000,
+   "buyoutFee": 1600000,
+   "contractSeasons": 4,
+   "teamId": "alp",
+   "stats": [
+    77,
+    70,
+    73,
+    74,
+    73,
+    71
+   ]
+  },
+  {
+   "id": "e_alp3",
+   "name": "Emma Yamada",
+   "nationality": "BRA",
+   "age": 40,
+   "salaryPerRace": 94000,
+   "signingBonus": 560000,
+   "buyoutFee": 1690000,
+   "contractSeasons": 3,
+   "teamId": "alp",
+   "stats": [
+    80,
+    75,
+    75,
+    77,
+    73,
+    76
+   ]
+  },
+  {
+   "id": "e_rb1",
+   "name": "Raj Mendes",
+   "nationality": "GER",
+   "age": 38,
+   "salaryPerRace": 111000,
+   "signingBonus": 670000,
+   "buyoutFee": 2000000,
+   "contractSeasons": 4,
+   "teamId": "rb",
+   "stats": [
+    77,
+    86,
+    81,
+    76,
+    76,
+    78
+   ]
+  },
+  {
+   "id": "e_rb2",
+   "name": "Callum Weiss",
+   "nationality": "NED",
+   "age": 38,
+   "salaryPerRace": 79000,
+   "signingBonus": 470000,
+   "buyoutFee": 1420000,
+   "contractSeasons": 2,
+   "teamId": "rb",
+   "stats": [
+    71,
+    73,
+    73,
+    72,
+    75,
+    74
+   ]
+  },
+  {
+   "id": "e_rb3",
+   "name": "Max Keller",
+   "nationality": "DEN",
+   "age": 40,
+   "salaryPerRace": 93000,
+   "signingBonus": 560000,
+   "buyoutFee": 1670000,
+   "contractSeasons": 1,
+   "teamId": "rb",
+   "stats": [
+    71,
+    77,
+    83,
+    72,
+    74,
+    73
+   ]
+  },
+  {
+   "id": "e_haa1",
+   "name": "Emma Laurent",
+   "nationality": "USA",
+   "age": 57,
+   "salaryPerRace": 100000,
+   "signingBonus": 600000,
+   "buyoutFee": 1800000,
+   "contractSeasons": 3,
+   "teamId": "haa",
+   "stats": [
+    76,
+    74,
+    76,
+    75,
+    81,
+    74
+   ]
+  },
+  {
+   "id": "e_haa2",
+   "name": "Callum Ibarra",
+   "nationality": "GBR",
+   "age": 34,
+   "salaryPerRace": 89000,
+   "signingBonus": 530000,
+   "buyoutFee": 1600000,
+   "contractSeasons": 2,
+   "teamId": "haa",
+   "stats": [
+    75,
+    73,
+    71,
+    79,
+    76,
+    76
+   ]
+  },
+  {
+   "id": "e_haa3",
+   "name": "Ines Whitfield",
+   "nationality": "POL",
+   "age": 34,
+   "salaryPerRace": 71000,
+   "signingBonus": 430000,
+   "buyoutFee": 1280000,
+   "contractSeasons": 4,
+   "teamId": "haa",
+   "stats": [
+    69,
+    74,
+    68,
+    67,
+    68,
+    68
+   ]
+  },
+  {
+   "id": "e_wil1",
+   "name": "Hannah Strand",
+   "nationality": "NOR",
+   "age": 34,
+   "salaryPerRace": 85000,
+   "signingBonus": 510000,
+   "buyoutFee": 1530000,
+   "contractSeasons": 1,
+   "teamId": "wil",
+   "stats": [
+    74,
+    73,
+    79,
+    69,
+    72,
+    71
+   ]
+  },
+  {
+   "id": "e_wil2",
+   "name": "Lina Okafor",
+   "nationality": "AUS",
+   "age": 56,
+   "salaryPerRace": 93000,
+   "signingBonus": 560000,
+   "buyoutFee": 1670000,
+   "contractSeasons": 4,
+   "teamId": "wil",
+   "stats": [
+    75,
+    80,
+    72,
+    74,
+    72,
+    71
+   ]
+  },
+  {
+   "id": "e_wil3",
+   "name": "Luca Yamada",
+   "nationality": "SWE",
+   "age": 44,
+   "salaryPerRace": 86000,
+   "signingBonus": 520000,
+   "buyoutFee": 1550000,
+   "contractSeasons": 1,
+   "teamId": "wil",
+   "stats": [
+    71,
+    77,
+    74,
+    73,
+    73,
+    70
+   ]
+  },
+  {
+   "id": "e_aud1",
+   "name": "Jamal Carver",
+   "nationality": "GER",
+   "age": 53,
+   "salaryPerRace": 63000,
+   "signingBonus": 380000,
+   "buyoutFee": 1130000,
+   "contractSeasons": 2,
+   "teamId": "aud",
+   "stats": [
+    68,
+    69,
+    66,
+    70,
+    67,
+    74
+   ]
+  },
+  {
+   "id": "e_aud2",
+   "name": "Tariq Quinn",
+   "nationality": "SWE",
+   "age": 47,
+   "salaryPerRace": 64000,
+   "signingBonus": 380000,
+   "buyoutFee": 1150000,
+   "contractSeasons": 4,
+   "teamId": "aud",
+   "stats": [
+    72,
+    69,
+    65,
+    69,
+    68,
+    65
+   ]
+  },
+  {
+   "id": "e_aud3",
+   "name": "Raj Mercer",
+   "nationality": "IND",
+   "age": 40,
+   "salaryPerRace": 58000,
+   "signingBonus": 350000,
+   "buyoutFee": 1040000,
+   "contractSeasons": 3,
+   "teamId": "aud",
+   "stats": [
+    72,
+    67,
+    64,
+    66,
+    67,
+    66
+   ]
+  },
+  {
+   "id": "e_ast1",
+   "name": "Priya Vidal",
+   "nationality": "NOR",
+   "age": 50,
+   "salaryPerRace": 63000,
+   "signingBonus": 380000,
+   "buyoutFee": 1130000,
+   "contractSeasons": 4,
+   "teamId": "ast",
+   "stats": [
+    74,
+    66,
+    64,
+    66,
+    70,
+    68
+   ]
+  },
+  {
+   "id": "e_ast2",
+   "name": "Sam Ibarra",
+   "nationality": "USA",
+   "age": 56,
+   "salaryPerRace": 69000,
+   "signingBonus": 410000,
+   "buyoutFee": 1240000,
+   "contractSeasons": 3,
+   "teamId": "ast",
+   "stats": [
+    70,
+    65,
+    68,
+    74,
+    70,
+    67
+   ]
+  },
+  {
+   "id": "e_ast3",
+   "name": "Nadia Carver",
+   "nationality": "CZE",
+   "age": 43,
+   "salaryPerRace": 66000,
+   "signingBonus": 400000,
+   "buyoutFee": 1190000,
+   "contractSeasons": 3,
+   "teamId": "ast",
+   "stats": [
+    65,
+    70,
+    70,
+    77,
+    68,
+    70
+   ]
+  },
+  {
+   "id": "e_cad1",
+   "name": "Ben Barlow",
+   "nationality": "DEN",
+   "age": 48,
+   "salaryPerRace": 66000,
+   "signingBonus": 400000,
+   "buyoutFee": 1190000,
+   "contractSeasons": 1,
+   "teamId": "cad",
+   "stats": [
+    69,
+    67,
+    68,
+    69,
+    67,
+    74
+   ]
+  },
+  {
+   "id": "e_cad2",
+   "name": "Mateo Oakley",
+   "nationality": "AUS",
+   "age": 54,
+   "salaryPerRace": 41000,
+   "signingBonus": 250000,
+   "buyoutFee": 740000,
+   "contractSeasons": 1,
+   "teamId": "cad",
+   "stats": [
+    61,
+    70,
+    63,
+    62,
+    67,
+    61
+   ]
+  },
+  {
+   "id": "e_cad3",
+   "name": "Noah Sato",
+   "nationality": "DEN",
+   "age": 43,
+   "salaryPerRace": 61000,
+   "signingBonus": 370000,
+   "buyoutFee": 1100000,
+   "contractSeasons": 1,
+   "teamId": "cad",
+   "stats": [
+    65,
+    65,
+    73,
+    67,
+    66,
+    66
+   ]
+  },
+  {
+   "id": "e_fa1",
+   "name": "Ruben Blackwood",
+   "nationality": "IND",
+   "age": 59,
+   "salaryPerRace": 87000,
+   "signingBonus": 520000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    73,
+    72,
+    74,
+    80,
+    75,
+    76
+   ]
+  },
+  {
+   "id": "e_fa2",
+   "name": "Tom Lund",
+   "nationality": "BEL",
+   "age": 61,
+   "salaryPerRace": 105000,
+   "signingBonus": 630000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    76,
+    80,
+    83,
+    75,
+    74,
+    74
+   ]
+  },
+  {
+   "id": "e_fa3",
+   "name": "Ivy Mercer",
+   "nationality": "JPN",
+   "age": 45,
+   "salaryPerRace": 99000,
+   "signingBonus": 590000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    78,
+    77,
+    76,
+    78,
+    81,
+    78
+   ]
+  },
+  {
+   "id": "e_fa4",
+   "name": "Felix Tanaka",
+   "nationality": "FIN",
+   "age": 59,
+   "salaryPerRace": 106000,
+   "signingBonus": 640000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    76,
+    78,
+    73,
+    76,
+    82,
+    77
+   ]
+  },
+  {
+   "id": "e_fa5",
+   "name": "Priya Silva",
+   "nationality": "MEX",
+   "age": 43,
+   "salaryPerRace": 120000,
+   "signingBonus": 720000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    83,
+    79,
+    91,
+    80,
+    81,
+    84
+   ]
+  },
+  {
+   "id": "e_fa6",
+   "name": "Grace Lindqvist",
+   "nationality": "NGA",
+   "age": 60,
+   "salaryPerRace": 100000,
+   "signingBonus": 600000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    83,
+    79,
+    77,
+    76,
+    77,
+    76
+   ]
+  },
+  {
+   "id": "e_fa7",
+   "name": "Ruben Pike",
+   "nationality": "POR",
+   "age": 41,
+   "salaryPerRace": 117000,
+   "signingBonus": 700000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    85,
+    81,
+    80,
+    80,
+    84,
+    82
+   ]
+  },
+  {
+   "id": "e_fa8",
+   "name": "Oliver Varga",
+   "nationality": "FIN",
+   "age": 56,
+   "salaryPerRace": 130000,
+   "signingBonus": 780000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    82,
+    83,
+    85,
+    82,
+    91,
+    81
+   ]
+  },
+  {
+   "id": "e_fa9",
+   "name": "Callum Kimura",
+   "nationality": "BRA",
+   "age": 31,
+   "salaryPerRace": 70000,
+   "signingBonus": 280000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    69,
+    67,
+    70,
+    79,
+    67,
+    68
+   ]
+  },
+  {
+   "id": "e_fa10",
+   "name": "Tom Ferreira",
+   "nationality": "ITA",
+   "age": 33,
+   "salaryPerRace": 71000,
+   "signingBonus": 280000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    68,
+    68,
+    68,
+    67,
+    67,
+    76
+   ]
+  },
+  {
+   "id": "e_fa11",
+   "name": "Ivy Carver",
+   "nationality": "NGA",
+   "age": 26,
+   "salaryPerRace": 43000,
+   "signingBonus": 170000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    61,
+    70,
+    60,
+    60,
+    64,
+    63
+   ]
+  },
+  {
+   "id": "e_fa12",
+   "name": "Jamal Ibarra",
+   "nationality": "ESP",
+   "age": 33,
+   "salaryPerRace": 46000,
+   "signingBonus": 180000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    61,
+    63,
+    70,
+    64,
+    64,
+    62
+   ]
+  },
+  {
+   "id": "e_fa13",
+   "name": "Hannah Moreau",
+   "nationality": "CZE",
+   "age": 29,
+   "salaryPerRace": 74000,
+   "signingBonus": 300000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    71,
+    78,
+    68,
+    68,
+    72,
+    69
+   ]
+  },
+  {
+   "id": "e_fa14",
+   "name": "Ines Conti",
+   "nationality": "CAN",
+   "age": 29,
+   "salaryPerRace": 23000,
+   "signingBonus": 90000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    55,
+    58,
+    59,
+    57,
+    62,
+    63
+   ]
+  },
+  {
+   "id": "e_fa15",
+   "name": "Lina Sato",
+   "nationality": "BEL",
+   "age": 29,
+   "salaryPerRace": 68000,
+   "signingBonus": 270000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    75,
+    66,
+    67,
+    69,
+    70,
+    67
+   ]
+  },
+  {
+   "id": "e_fa16",
+   "name": "Emma Lund",
+   "nationality": "POL",
+   "age": 33,
+   "salaryPerRace": 39000,
+   "signingBonus": 160000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    62,
+    63,
+    63,
+    64,
+    61,
+    59
+   ]
+  },
+  {
+   "id": "e_fa17",
+   "name": "Luca Kerr",
+   "nationality": "GBR",
+   "age": 26,
+   "salaryPerRace": 20000,
+   "signingBonus": 80000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    59,
+    57,
+    56,
+    56,
+    54,
+    66
+   ]
+  },
+  {
+   "id": "e_fa18",
+   "name": "Ethan Engel",
+   "nationality": "NED",
+   "age": 33,
+   "salaryPerRace": 68000,
+   "signingBonus": 270000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    75,
+    72,
+    69,
+    70,
+    67,
+    67
+   ]
+  },
+  {
+   "id": "e_fa19",
+   "name": "Yuki Laurent",
+   "nationality": "POR",
+   "age": 25,
+   "salaryPerRace": 66000,
+   "signingBonus": 260000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    78,
+    72,
+    70,
+    66,
+    66,
+    68
+   ]
+  },
+  {
+   "id": "e_fa20",
+   "name": "Nadia Ueda",
+   "nationality": "USA",
+   "age": 27,
+   "salaryPerRace": 74000,
+   "signingBonus": 300000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    68,
+    74,
+    76,
+    69,
+    68,
+    71
+   ]
+  },
+  {
+   "id": "e_fa21",
+   "name": "Nadia Lowe",
+   "nationality": "BRA",
+   "age": 27,
+   "salaryPerRace": 30000,
+   "signingBonus": 120000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    66,
+    58,
+    60,
+    62,
+    58,
+    62
+   ]
+  },
+  {
+   "id": "e_fa22",
+   "name": "Ben Laurent",
+   "nationality": "NOR",
+   "age": 26,
+   "salaryPerRace": 68000,
+   "signingBonus": 270000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    66,
+    66,
+    70,
+    69,
+    72,
+    71
+   ]
+  },
+  {
+   "id": "e_fa23",
+   "name": "Noah Thorne",
+   "nationality": "ESP",
+   "age": 25,
+   "salaryPerRace": 52000,
+   "signingBonus": 210000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    70,
+    65,
+    67,
+    66,
+    63,
+    65
+   ]
+  },
+  {
+   "id": "e_fa24",
+   "name": "Sofia Novak",
+   "nationality": "CZE",
+   "age": 26,
+   "salaryPerRace": 45000,
+   "signingBonus": 180000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    61,
+    67,
+    64,
+    64,
+    63,
+    65
+   ]
+  }
+ ],
+ "coordinators": [
+  {
+   "id": "c_wol",
+   "name": "Toto Wolff",
+   "nationality": "AUT",
+   "age": 54,
+   "salaryPerRace": 221000,
+   "signingBonus": 1330000,
+   "buyoutFee": 4420000,
+   "contractSeasons": 4,
+   "teamId": "mer",
+   "stats": [
+    87,
+    90,
+    90
+   ]
+  },
+  {
+   "id": "c_vas",
+   "name": "Fred Vasseur",
+   "nationality": "FRA",
+   "age": 58,
+   "salaryPerRace": 181000,
+   "signingBonus": 1090000,
+   "buyoutFee": 3620000,
+   "contractSeasons": 2,
+   "teamId": "fer",
+   "stats": [
+    87,
+    83,
+    85
+   ]
+  },
+  {
+   "id": "c_stl",
+   "name": "Andrea Stella",
+   "nationality": "ITA",
+   "age": 55,
+   "salaryPerRace": 225000,
+   "signingBonus": 1350000,
+   "buyoutFee": 4500000,
+   "contractSeasons": 4,
+   "teamId": "mcl",
+   "stats": [
+    88,
+    91,
+    91
+   ]
+  },
+  {
+   "id": "c_mek",
+   "name": "Laurent Mekies",
+   "nationality": "FRA",
+   "age": 49,
+   "salaryPerRace": 191000,
+   "signingBonus": 1150000,
+   "buyoutFee": 3820000,
+   "contractSeasons": 4,
+   "teamId": "rbr",
+   "stats": [
+    85,
+    81,
+    86
+   ]
+  },
+  {
+   "id": "c_pem",
+   "name": "Alan Permane",
+   "nationality": "GBR",
+   "age": 59,
+   "salaryPerRace": 151000,
+   "signingBonus": 910000,
+   "buyoutFee": 3020000,
+   "contractSeasons": 4,
+   "teamId": "rb",
+   "stats": [
+    78,
+    79,
+    80
+   ]
+  },
+  {
+   "id": "c_nie",
+   "name": "Steve Nielsen",
+   "nationality": "GBR",
+   "age": 61,
+   "salaryPerRace": 124000,
+   "signingBonus": 740000,
+   "buyoutFee": 2480000,
+   "contractSeasons": 4,
+   "teamId": "alp",
+   "stats": [
+    73,
+    77,
+    78
+   ]
+  },
+  {
+   "id": "c_kom",
+   "name": "Ayao Komatsu",
+   "nationality": "JPN",
+   "age": 50,
+   "salaryPerRace": 149000,
+   "signingBonus": 890000,
+   "buyoutFee": 2980000,
+   "contractSeasons": 3,
+   "teamId": "haa",
+   "stats": [
+    79,
+    80,
+    81
+   ]
+  },
+  {
+   "id": "c_vow",
+   "name": "James Vowles",
+   "nationality": "GBR",
+   "age": 47,
+   "salaryPerRace": 176000,
+   "signingBonus": 1060000,
+   "buyoutFee": 3520000,
+   "contractSeasons": 4,
+   "teamId": "wil",
+   "stats": [
+    78,
+    82,
+    86
+   ]
+  },
+  {
+   "id": "c_bin",
+   "name": "Mattia Binotto",
+   "nationality": "SUI",
+   "age": 57,
+   "salaryPerRace": 143000,
+   "signingBonus": 860000,
+   "buyoutFee": 2860000,
+   "contractSeasons": 3,
+   "teamId": "aud",
+   "stats": [
+    77,
+    79,
+    78
+   ]
+  },
+  {
+   "id": "c_new",
+   "name": "Adrian Newey",
+   "nationality": "GBR",
+   "age": 67,
+   "salaryPerRace": 168000,
+   "signingBonus": 1010000,
+   "buyoutFee": 3360000,
+   "contractSeasons": 4,
+   "teamId": "ast",
+   "stats": [
+    80,
+    79,
+    84
+   ]
+  },
+  {
+   "id": "c_bud",
+   "name": "Marcin Budkowski",
+   "nationality": "POL",
+   "age": 49,
+   "salaryPerRace": 117000,
+   "signingBonus": 700000,
+   "buyoutFee": 2340000,
+   "contractSeasons": 4,
+   "teamId": "cad",
+   "stats": [
+    73,
+    74,
+    75
+   ]
+  },
+  {
+   "id": "c_hor",
+   "name": "Christian Horner",
+   "nationality": "GBR",
+   "age": 52,
+   "salaryPerRace": 181000,
+   "signingBonus": 900000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    88,
+    84,
+    86
+   ]
+  },
+  {
+   "id": "c_ste",
+   "name": "Guenther Steiner",
+   "nationality": "ITA",
+   "age": 61,
+   "salaryPerRace": 127000,
+   "signingBonus": 640000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    77,
+    72,
+    76
+   ]
+  },
+  {
+   "id": "c_sza",
+   "name": "Otmar Szafnauer",
+   "nationality": "USA",
+   "age": 62,
+   "salaryPerRace": 109000,
+   "signingBonus": 540000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    72,
+    76,
+    74
+   ]
+  },
+  {
+   "id": "c_kra",
+   "name": "Mike Krack",
+   "nationality": "LUX",
+   "age": 53,
+   "salaryPerRace": 115000,
+   "signingBonus": 580000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    73,
+    72,
+    74
+   ]
+  },
+  {
+   "id": "c_oak",
+   "name": "Oliver Oakes",
+   "nationality": "GBR",
+   "age": 38,
+   "salaryPerRace": 102000,
+   "signingBonus": 510000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    73,
+    71,
+    72
+   ]
+  },
+  {
+   "id": "c_whe",
+   "name": "Jonathan Wheatley",
+   "nationality": "GBR",
+   "age": 59,
+   "salaryPerRace": 137000,
+   "signingBonus": 680000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    78,
+    77,
+    82
+   ]
+  },
+  {
+   "id": "c_low",
+   "name": "Graeme Lowdon",
+   "nationality": "GBR",
+   "age": 61,
+   "salaryPerRace": 94000,
+   "signingBonus": 470000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    70,
+    71,
+    69
+   ]
+  },
+  {
+   "id": "c_sei",
+   "name": "Andreas Seidl",
+   "nationality": "GER",
+   "age": 50,
+   "salaryPerRace": 144000,
+   "signingBonus": 720000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    79,
+    80,
+    81
+   ]
+  },
+  {
+   "id": "c_fa1",
+   "name": "Noah Fontaine",
+   "nationality": "IRL",
+   "age": 38,
+   "salaryPerRace": 67000,
+   "signingBonus": 270000,
+   "buyoutFee": -1,
+   "contractSeasons": 2,
+   "teamId": "",
+   "stats": [
+    68,
+    67,
+    66
+   ]
+  },
+  {
+   "id": "c_fa2",
+   "name": "Priya Reyes",
+   "nationality": "ESP",
+   "age": 34,
+   "salaryPerRace": 51000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    63,
+    63,
+    66
+   ]
+  },
+  {
+   "id": "c_fa3",
+   "name": "Jamal Keller",
+   "nationality": "NOR",
+   "age": 32,
+   "salaryPerRace": 60000,
+   "signingBonus": 240000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    64,
+    62,
+    69
+   ]
+  },
+  {
+   "id": "c_fa4",
+   "name": "Lina Reyes",
+   "nationality": "CZE",
+   "age": 32,
+   "salaryPerRace": 68000,
+   "signingBonus": 270000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    67,
+    70,
+    64
+   ]
+  },
+  {
+   "id": "c_fa5",
+   "name": "Callum Varga",
+   "nationality": "FIN",
+   "age": 35,
+   "salaryPerRace": 61000,
+   "signingBonus": 240000,
+   "buyoutFee": -1,
+   "contractSeasons": 3,
+   "teamId": "",
+   "stats": [
+    65,
+    67,
+    66
+   ]
+  },
+  {
+   "id": "c_fa6",
+   "name": "Pablo Ueda",
+   "nationality": "FIN",
+   "age": 29,
+   "salaryPerRace": 49000,
+   "signingBonus": 200000,
+   "buyoutFee": -1,
+   "contractSeasons": 1,
+   "teamId": "",
+   "stats": [
+    64,
+    63,
+    65
+   ]
+  }
+ ],
+ "calendar": [
+  {
+   "grandPrix": "Australian Grand Prix",
+   "circuit": "Albert Park, Melbourne",
+   "laps": 58,
+   "overtaking": "Medium",
+   "tireWear": "Medium",
+   "cornering": "Medium",
+   "trackId": "au-1953",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.15
+  },
+  {
+   "grandPrix": "Chinese Grand Prix",
+   "circuit": "Shanghai International Circuit",
+   "laps": 56,
+   "overtaking": "Easy",
+   "tireWear": "Hard",
+   "cornering": "Medium",
+   "trackId": "cn-2004",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.2
+  },
+  {
+   "grandPrix": "Japanese Grand Prix",
+   "circuit": "Suzuka",
+   "laps": 53,
+   "overtaking": "Hard",
+   "tireWear": "Hard",
+   "cornering": "Hard",
+   "trackId": "jp-1962",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.25
+  },
+  {
+   "grandPrix": "Miami Grand Prix",
+   "circuit": "Miami International Autodrome",
+   "laps": 57,
+   "overtaking": "Medium",
+   "tireWear": "Medium",
+   "cornering": "Easy",
+   "trackId": "us-2022",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.15
+  },
+  {
+   "grandPrix": "Canadian Grand Prix",
+   "circuit": "Circuit Gilles Villeneuve",
+   "laps": 70,
+   "overtaking": "Easy",
+   "tireWear": "Easy",
+   "cornering": "Easy",
+   "trackId": "ca-1978",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.2
+  },
+  {
+   "grandPrix": "Monaco Grand Prix",
+   "circuit": "Circuit de Monaco",
+   "laps": 78,
+   "overtaking": "Hard",
+   "tireWear": "Easy",
+   "cornering": "Hard",
+   "trackId": "mc-1929",
+   "pitSpeedKmh": 60,
+   "rainChance": 0.12
+  },
+  {
+   "grandPrix": "Spanish Grand Prix",
+   "circuit": "Circuit de Barcelona-Catalunya",
+   "laps": 66,
+   "overtaking": "Hard",
+   "tireWear": "Hard",
+   "cornering": "Hard",
+   "trackId": "es-1991",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.08
+  },
+  {
+   "grandPrix": "Austrian Grand Prix",
+   "circuit": "Red Bull Ring",
+   "laps": 71,
+   "overtaking": "Easy",
+   "tireWear": "Medium",
+   "cornering": "Easy",
+   "trackId": "at-1969",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.2
+  },
+  {
+   "grandPrix": "British Grand Prix",
+   "circuit": "Silverstone",
+   "laps": 52,
+   "overtaking": "Medium",
+   "tireWear": "Hard",
+   "cornering": "Hard",
+   "trackId": "gb-1948",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.35
+  },
+  {
+   "grandPrix": "Belgian Grand Prix",
+   "circuit": "Spa-Francorchamps",
+   "laps": 44,
+   "overtaking": "Easy",
+   "tireWear": "Medium",
+   "cornering": "Medium",
+   "trackId": "be-1925",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.35
+  },
+  {
+   "grandPrix": "Hungarian Grand Prix",
+   "circuit": "Hungaroring",
+   "laps": 70,
+   "overtaking": "Hard",
+   "tireWear": "Medium",
+   "cornering": "Hard",
+   "trackId": "hu-1986",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.15
+  },
+  {
+   "grandPrix": "Dutch Grand Prix",
+   "circuit": "Zandvoort",
+   "laps": 72,
+   "overtaking": "Hard",
+   "tireWear": "Medium",
+   "cornering": "Hard",
+   "trackId": "nl-1948",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.2
+  },
+  {
+   "grandPrix": "Italian Grand Prix",
+   "circuit": "Monza",
+   "laps": 53,
+   "overtaking": "Easy",
+   "tireWear": "Easy",
+   "cornering": "Easy",
+   "trackId": "it-1922",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.1
+  },
+  {
+   "grandPrix": "Madrid Grand Prix",
+   "circuit": "Madring",
+   "laps": 57,
+   "overtaking": "Medium",
+   "tireWear": "Medium",
+   "cornering": "Medium",
+   "trackId": "es-2026",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.08
+  },
+  {
+   "grandPrix": "Azerbaijan Grand Prix",
+   "circuit": "Baku City Circuit",
+   "laps": 51,
+   "overtaking": "Easy",
+   "tireWear": "Easy",
+   "cornering": "Medium",
+   "trackId": "az-2016",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.05
+  },
+  {
+   "grandPrix": "Singapore Grand Prix",
+   "circuit": "Marina Bay",
+   "laps": 62,
+   "overtaking": "Hard",
+   "tireWear": "Medium",
+   "cornering": "Hard",
+   "trackId": "sg-2008",
+   "pitSpeedKmh": 60,
+   "rainChance": 0.2
+  },
+  {
+   "grandPrix": "United States Grand Prix",
+   "circuit": "Circuit of the Americas",
+   "laps": 56,
+   "overtaking": "Medium",
+   "tireWear": "Hard",
+   "cornering": "Medium",
+   "trackId": "us-2012",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.1
+  },
+  {
+   "grandPrix": "Mexico City Grand Prix",
+   "circuit": "Autodromo Hermanos Rodriguez",
+   "laps": 71,
+   "overtaking": "Medium",
+   "tireWear": "Easy",
+   "cornering": "Easy",
+   "trackId": "mx-1962",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.12
+  },
+  {
+   "grandPrix": "Sao Paulo Grand Prix",
+   "circuit": "Interlagos",
+   "laps": 71,
+   "overtaking": "Easy",
+   "tireWear": "Medium",
+   "cornering": "Medium",
+   "trackId": "br-1940",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.35
+  },
+  {
+   "grandPrix": "Las Vegas Grand Prix",
+   "circuit": "Las Vegas Strip Circuit",
+   "laps": 50,
+   "overtaking": "Easy",
+   "tireWear": "Easy",
+   "cornering": "Easy",
+   "trackId": "us-2023",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.02
+  },
+  {
+   "grandPrix": "Qatar Grand Prix",
+   "circuit": "Lusail International Circuit",
+   "laps": 57,
+   "overtaking": "Medium",
+   "tireWear": "Hard",
+   "cornering": "Hard",
+   "trackId": "qa-2004",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.02
+  },
+  {
+   "grandPrix": "Abu Dhabi Grand Prix",
+   "circuit": "Yas Marina",
+   "laps": 58,
+   "overtaking": "Medium",
+   "tireWear": "Easy",
+   "cornering": "Medium",
+   "trackId": "ae-2009",
+   "pitSpeedKmh": 80,
+   "rainChance": 0.01
+  }
+ ],
+ "sponsorOffers": [
+  {
+   "id": "s01",
+   "name": "Nova Energy",
+   "color": "#FFB000",
+   "guaranteedPerRace": 1440000,
+   "bonusAmount": 700000,
+   "bonusCondition": "Win a race",
+   "durationRaces": 22,
+   "terminationFee": 9000000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s02",
+   "name": "Helix Telecom",
+   "color": "#7A3CFF",
+   "guaranteedPerRace": 1200000,
+   "bonusAmount": 420000,
+   "bonusCondition": "Podium finish",
+   "durationRaces": 22,
+   "terminationFee": 7000000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s03",
+   "name": "Atlas Bank",
+   "color": "#1F4E79",
+   "guaranteedPerRace": 1020000,
+   "bonusAmount": 280000,
+   "bonusCondition": "Both cars finish in the points",
+   "durationRaces": 44,
+   "terminationFee": 8000000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s04",
+   "name": "Zephyr Airlines",
+   "color": "#00A3E0",
+   "guaranteedPerRace": 900000,
+   "bonusAmount": 630000,
+   "bonusCondition": "Finish top 3 in the constructors' championship",
+   "durationRaces": 22,
+   "terminationFee": 5000000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s05",
+   "name": "Quantum Chips",
+   "color": "#00C2A8",
+   "guaranteedPerRace": 570000,
+   "bonusAmount": 210000,
+   "bonusCondition": "Top 5 in qualifying",
+   "durationRaces": 22,
+   "terminationFee": 2500000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s06",
+   "name": "Ironclad Tools",
+   "color": "#8B8B8B",
+   "guaranteedPerRace": 480000,
+   "bonusAmount": 180000,
+   "bonusCondition": "Finish in the top 6",
+   "durationRaces": 33,
+   "terminationFee": 2000000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s07",
+   "name": "Solace Watches",
+   "color": "#C9A227",
+   "guaranteedPerRace": 540000,
+   "bonusAmount": 350000,
+   "bonusCondition": "Podium finish",
+   "durationRaces": 11,
+   "terminationFee": 1500000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s08",
+   "name": "Pulse Energy Drink",
+   "color": "#E4002B",
+   "guaranteedPerRace": 450000,
+   "bonusAmount": 140000,
+   "bonusCondition": "Gain 5+ places in a race",
+   "durationRaces": 22,
+   "terminationFee": 1800000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s09",
+   "name": "Vertex Cloud",
+   "color": "#2D9CDB",
+   "guaranteedPerRace": 660000,
+   "bonusAmount": 240000,
+   "bonusCondition": "Both cars in the top 8",
+   "durationRaces": 22,
+   "terminationFee": 3000000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s10",
+   "name": "Granite Insurance",
+   "color": "#5D6D7E",
+   "guaranteedPerRace": 390000,
+   "bonusAmount": 100000,
+   "bonusCondition": "Finish every race this season",
+   "durationRaces": 44,
+   "terminationFee": 1500000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s11",
+   "name": "Monarch Motors",
+   "color": "#4B0082",
+   "guaranteedPerRace": 510000,
+   "bonusAmount": 280000,
+   "bonusCondition": "Front row start",
+   "durationRaces": 22,
+   "terminationFee": 2200000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s12",
+   "name": "Swift Couriers",
+   "color": "#F39C12",
+   "guaranteedPerRace": 210000,
+   "bonusAmount": 70000,
+   "bonusCondition": "Finish in the points",
+   "durationRaces": 22,
+   "terminationFee": 600000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s13",
+   "name": "Bluefin Seafood",
+   "color": "#1ABC9C",
+   "guaranteedPerRace": 150000,
+   "bonusAmount": 60000,
+   "bonusCondition": "Finish in the top 10",
+   "durationRaces": 11,
+   "terminationFee": 300000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s14",
+   "name": "Orbit Gaming",
+   "color": "#9B59B6",
+   "guaranteedPerRace": 180000,
+   "bonusAmount": 100000,
+   "bonusCondition": "Fastest lap",
+   "durationRaces": 22,
+   "terminationFee": 500000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s15",
+   "name": "Kestrel Optics",
+   "color": "#34495E",
+   "guaranteedPerRace": 170000,
+   "bonusAmount": 40000,
+   "bonusCondition": "Finish the race",
+   "durationRaces": 33,
+   "terminationFee": 400000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s16",
+   "name": "Maple Coffee",
+   "color": "#6F4E37",
+   "guaranteedPerRace": 130000,
+   "bonusAmount": 40000,
+   "bonusCondition": "Beat your teammate's last result",
+   "durationRaces": 22,
+   "terminationFee": 250000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s17",
+   "name": "Torque Lubricants",
+   "color": "#D35400",
+   "guaranteedPerRace": 240000,
+   "bonusAmount": 80000,
+   "bonusCondition": "Score points with both cars",
+   "durationRaces": 22,
+   "terminationFee": 700000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s18",
+   "name": "Lumen Lighting",
+   "color": "#F1C40F",
+   "guaranteedPerRace": 120000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 44,
+   "terminationFee": 300000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s19",
+   "name": "Crimson Apparel",
+   "color": "#C0392B",
+   "guaranteedPerRace": 190000,
+   "bonusAmount": 70000,
+   "bonusCondition": "Top 10 in qualifying",
+   "durationRaces": 22,
+   "terminationFee": 450000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s20",
+   "name": "Glacier Water",
+   "color": "#5DADE2",
+   "guaranteedPerRace": 110000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 66,
+   "terminationFee": 200000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s21",
+   "name": "Raptor Tyres Co",
+   "color": "#2C3E50",
+   "guaranteedPerRace": 230000,
+   "bonusAmount": 140000,
+   "bonusCondition": "Podium finish",
+   "durationRaces": 11,
+   "terminationFee": 350000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s22",
+   "name": "Pixel Arcade",
+   "color": "#E91E63",
+   "guaranteedPerRace": 90000,
+   "bonusAmount": 210000,
+   "bonusCondition": "Win a race",
+   "durationRaces": 22,
+   "terminationFee": 150000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s23",
+   "name": "Weekend Rentals",
+   "color": "#16A085",
+   "guaranteedPerRace": 180000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 5,
+   "terminationFee": 100000,
+   "slots": []
+  },
+  {
+   "id": "s24",
+   "name": "Trackside Tickets",
+   "color": "#8E44AD",
+   "guaranteedPerRace": 160000,
+   "bonusAmount": 40000,
+   "bonusCondition": "Finish in the points",
+   "durationRaces": 8,
+   "terminationFee": 120000,
+   "slots": []
+  },
+  {
+   "id": "s25",
+   "name": "Northwind Logistics",
+   "color": "#2980B9",
+   "guaranteedPerRace": 270000,
+   "bonusAmount": 100000,
+   "bonusCondition": "Both cars finish",
+   "durationRaces": 11,
+   "terminationFee": 600000,
+   "slots": []
+  },
+  {
+   "id": "s26",
+   "name": "Ember Grills",
+   "color": "#E67E22",
+   "guaranteedPerRace": 120000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 6,
+   "terminationFee": 80000,
+   "slots": []
+  },
+  {
+   "id": "s27",
+   "name": "Sovereign Petroleum",
+   "color": "#B8860B",
+   "guaranteedPerRace": 1320000,
+   "bonusAmount": 560000,
+   "bonusCondition": "Win a race",
+   "durationRaces": 33,
+   "terminationFee": 8500000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s28",
+   "name": "Aurora Mobile",
+   "color": "#00B4D8",
+   "guaranteedPerRace": 1080000,
+   "bonusAmount": 350000,
+   "bonusCondition": "Both cars on the podium",
+   "durationRaces": 22,
+   "terminationFee": 6000000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s29",
+   "name": "Meridian Crypto",
+   "color": "#F7931A",
+   "guaranteedPerRace": 1560000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 11,
+   "terminationFee": 4000000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s30",
+   "name": "Starlane Hotels",
+   "color": "#9C27B0",
+   "guaranteedPerRace": 840000,
+   "bonusAmount": 490000,
+   "bonusCondition": "Finish top 5 in the constructors' championship",
+   "durationRaces": 44,
+   "terminationFee": 5500000,
+   "slots": [
+    1
+   ]
+  },
+  {
+   "id": "s31",
+   "name": "Cobalt Software",
+   "color": "#3F51B5",
+   "guaranteedPerRace": 600000,
+   "bonusAmount": 210000,
+   "bonusCondition": "Finish in the top 5",
+   "durationRaces": 22,
+   "terminationFee": 2600000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s32",
+   "name": "Redwood Timber",
+   "color": "#8D3B2E",
+   "guaranteedPerRace": 420000,
+   "bonusAmount": 100000,
+   "bonusCondition": "Score points with both cars",
+   "durationRaces": 33,
+   "terminationFee": 1600000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s33",
+   "name": "Arcadia Streaming",
+   "color": "#E50914",
+   "guaranteedPerRace": 540000,
+   "bonusAmount": 320000,
+   "bonusCondition": "Lead a lap",
+   "durationRaces": 22,
+   "terminationFee": 2100000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s34",
+   "name": "Halcyon Pharma",
+   "color": "#26A69A",
+   "guaranteedPerRace": 470000,
+   "bonusAmount": 140000,
+   "bonusCondition": "Finish every race this season",
+   "durationRaces": 44,
+   "terminationFee": 2000000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s35",
+   "name": "Boreal Mining",
+   "color": "#607D8B",
+   "guaranteedPerRace": 720000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 11,
+   "terminationFee": 1200000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s36",
+   "name": "Sentinel Security",
+   "color": "#212F3D",
+   "guaranteedPerRace": 490000,
+   "bonusAmount": 210000,
+   "bonusCondition": "Top 3 in qualifying",
+   "durationRaces": 22,
+   "terminationFee": 2300000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s37",
+   "name": "Velvet Cosmetics",
+   "color": "#D81B60",
+   "guaranteedPerRace": 430000,
+   "bonusAmount": 180000,
+   "bonusCondition": "Gain 5+ places in a race",
+   "durationRaces": 22,
+   "terminationFee": 1700000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s38",
+   "name": "Equinox Fitness",
+   "color": "#43A047",
+   "guaranteedPerRace": 410000,
+   "bonusAmount": 130000,
+   "bonusCondition": "Fastest pit stop of the race",
+   "durationRaces": 33,
+   "terminationFee": 1500000,
+   "slots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "s39",
+   "name": "Nimbus Umbrellas",
+   "color": "#90A4AE",
+   "guaranteedPerRace": 140000,
+   "bonusAmount": 80000,
+   "bonusCondition": "Finish in the points in a wet race",
+   "durationRaces": 22,
+   "terminationFee": 300000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s40",
+   "name": "Brightside Solar",
+   "color": "#FFC107",
+   "guaranteedPerRace": 170000,
+   "bonusAmount": 60000,
+   "bonusCondition": "Finish in the top 10",
+   "durationRaces": 33,
+   "terminationFee": 400000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s41",
+   "name": "Driftwood Surfwear",
+   "color": "#00ACC1",
+   "guaranteedPerRace": 130000,
+   "bonusAmount": 50000,
+   "bonusCondition": "Beat your teammate",
+   "durationRaces": 22,
+   "terminationFee": 250000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s42",
+   "name": "Copperhead Cables",
+   "color": "#B87333",
+   "guaranteedPerRace": 200000,
+   "bonusAmount": 80000,
+   "bonusCondition": "Both cars finish",
+   "durationRaces": 22,
+   "terminationFee": 500000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s43",
+   "name": "Thrive Nutrition",
+   "color": "#7CB342",
+   "guaranteedPerRace": 160000,
+   "bonusAmount": 60000,
+   "bonusCondition": "Fastest lap",
+   "durationRaces": 11,
+   "terminationFee": 250000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s44",
+   "name": "Saffron Spice Co",
+   "color": "#F4A300",
+   "guaranteedPerRace": 110000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 33,
+   "terminationFee": 200000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s45",
+   "name": "Polar Freight",
+   "color": "#4FC3F7",
+   "guaranteedPerRace": 220000,
+   "bonusAmount": 90000,
+   "bonusCondition": "Finish in the top 8",
+   "durationRaces": 22,
+   "terminationFee": 550000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s46",
+   "name": "Quill Stationery",
+   "color": "#5D4037",
+   "guaranteedPerRace": 100000,
+   "bonusAmount": 30000,
+   "bonusCondition": "Finish the race",
+   "durationRaces": 44,
+   "terminationFee": 150000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s47",
+   "name": "Hyperion Audio",
+   "color": "#AB47BC",
+   "guaranteedPerRace": 190000,
+   "bonusAmount": 110000,
+   "bonusCondition": "Podium finish",
+   "durationRaces": 22,
+   "terminationFee": 450000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s48",
+   "name": "Sprocket Bikes",
+   "color": "#FF7043",
+   "guaranteedPerRace": 140000,
+   "bonusAmount": 40000,
+   "bonusCondition": "Score points",
+   "durationRaces": 11,
+   "terminationFee": 200000,
+   "slots": [
+    4,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s49",
+   "name": "Pop-Up Pizza",
+   "color": "#FF5722",
+   "guaranteedPerRace": 170000,
+   "bonusAmount": 0,
+   "bonusCondition": "",
+   "durationRaces": 3,
+   "terminationFee": 60000,
+   "slots": []
+  },
+  {
+   "id": "s50",
+   "name": "Festival Pass",
+   "color": "#EC407A",
+   "guaranteedPerRace": 210000,
+   "bonusAmount": 70000,
+   "bonusCondition": "Finish in the points",
+   "durationRaces": 4,
+   "terminationFee": 100000,
+   "slots": []
+  },
+  {
+   "id": "s51",
+   "name": "Local Motors Dealer",
+   "color": "#78909C",
+   "guaranteedPerRace": 130000,
+   "bonusAmount": 40000,
+   "bonusCondition": "Both cars finish",
+   "durationRaces": 7,
+   "terminationFee": 90000,
+   "slots": []
+  },
+  {
+   "id": "s52",
+   "name": "Comet Energy Gum",
+   "color": "#00E676",
+   "guaranteedPerRace": 240000,
+   "bonusAmount": 100000,
+   "bonusCondition": "Podium finish",
+   "durationRaces": 5,
+   "terminationFee": 150000,
+   "slots": []
+  }
+ ]
+}
