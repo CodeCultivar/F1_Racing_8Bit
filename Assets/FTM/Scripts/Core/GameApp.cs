@@ -41,11 +41,19 @@ namespace FTM
         readonly List<Window> windows = new List<Window>();
 
         public const float MinScale = 720f / 1080f;
+        const float Bleed = 3000f;
+        Image topBand, bleed;
 
         void Awake()
         {
             I = this;
             Application.targetFrameRate = 60;
+            // landscape only (either way round), never portrait
+            Screen.autorotateToPortrait = false;
+            Screen.autorotateToPortraitUpsideDown = false;
+            Screen.autorotateToLandscapeLeft = true;
+            Screen.autorotateToLandscapeRight = true;
+            Screen.orientation = ScreenOrientation.AutoRotation;
             ConfigLoader.Load();
             EnsureEventSystem();
             BuildCanvas();
@@ -73,7 +81,7 @@ namespace FTM
             cgo.AddComponent<GraphicRaycaster>();
 
             // Letterbox background (dark space above/below on tall screens)
-            var bg = Ui.FillBox(cgo.transform, Theme.Letterbox, "Letterbox", true);
+            var bg = Ui.FillBox(cgo.transform, Theme.Background, "Letterbox", true);
 
             viewport = Ui.Stretch(Ui.Rect(cgo.transform, "Viewport"));
             viewport.gameObject.AddComponent<RectMask2D>();
@@ -83,6 +91,14 @@ namespace FTM
             Stage.sizeDelta = new Vector2(Theme.DesignW, Theme.DesignH);
             var stageBg = Stage.gameObject.AddComponent<Image>();
             stageBg.color = Theme.Background;
+            // Wide phones (iPhone ~19.5:9) are wider than the 16:9 design: the game fills the full height and
+            // the screen's background and top bar continue out to both edges, so there are no black bars.
+            // The extra width also keeps buttons clear of the notch / Dynamic Island.
+            bleed = Ui.Box(Stage, Theme.Background, -Bleed, -Bleed, Theme.DesignW + 2 * Bleed, Theme.DesignH + 2 * Bleed, "Bleed");
+            bleed.raycastTarget = false;
+            topBand = Ui.Box(Stage, Theme.TopBar, -Bleed, 0, Theme.DesignW + 2 * Bleed, 80, "TopBand");
+            topBand.raycastTarget = false;
+            topBand.gameObject.SetActive(false);
 
             stageScroll = viewport.gameObject.AddComponent<ScrollRect>();
             stageScroll.viewport = viewport;
@@ -161,6 +177,13 @@ namespace FTM
             current = screen;
             var root = Ui.Stretch(Ui.Rect(screenLayer, screen.GetType().Name));
             screen.Build(root);
+            // continue the screen's top bar to the screen edges on wide displays
+            bool hasBar = root.Find("TopBar") != null || root.Find("TeamHeader") != null;
+            topBand.gameObject.SetActive(hasBar);
+            // the edges take the screen's own background colour
+            var fill = root.Find("Fill");
+            var fillImg = fill != null ? fill.GetComponent<Image>() : null;
+            bleed.color = fillImg != null ? fillImg.color : Theme.Background;
         }
 
         public void RefreshCurrent()
@@ -180,6 +203,12 @@ namespace FTM
             HideTooltip();
             var w = new Window();
             var overlay = Ui.FillBox(windowLayer, Theme.Overlay, "Overlay", true);
+            // dim the edges too on wide phones, not just the 16:9 area
+            float W = Theme.DesignW, H = Theme.DesignH;
+            Ui.Box(overlay.transform, Theme.Overlay, -Bleed, -Bleed, Bleed, H + 2 * Bleed, "DimL", true);
+            Ui.Box(overlay.transform, Theme.Overlay, W, -Bleed, Bleed, H + 2 * Bleed, "DimR", true);
+            Ui.Box(overlay.transform, Theme.Overlay, 0, -Bleed, W, Bleed, "DimT", true);
+            Ui.Box(overlay.transform, Theme.Overlay, 0, H, W, Bleed, "DimB", true);
             w.root = overlay.rectTransform;
 
             const float pad = 24, headerH = 40, footerH = 48;

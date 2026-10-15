@@ -25,7 +25,7 @@ namespace FTM
 
         public void SetActive(bool on) { active = on; Apply(); }
         public void SetEnabled(bool on) { interactable = on; Apply(); }
-        public void SetLabel(string s) { if (label != null) label.text = s; }
+        public void SetLabel(string s) { if (label != null && label.text != s) Ui.SetText(label, s); }
 
         protected override void DoStateTransition(SelectionState state, bool instant)
         {

@@ -90,7 +90,65 @@ namespace FTM
             t.verticalOverflow = VerticalWrapMode.Overflow;
             t.supportRichText = false;
             t.raycastTarget = false;
+            Grow(t, size, w, h);
             return t;
+        }
+
+        /// <summary>Remembers a label's design size so it can be re-fitted when its text changes.</summary>
+        public class TextBase : MonoBehaviour { public int size; public float w, h; }
+
+        /// <summary>
+        /// Text Size setting: grows a label up to TextScale x its design size, but only as far as its box allows,
+        /// so nothing overflows into its neighbours.
+        /// </summary>
+        public static void Grow(Text t, int baseSize, float w, float h)
+        {
+            float k = Theme.TextScale;
+            if (k <= 1.01f || t == null) { if (t != null) t.fontSize = baseSize; return; }
+            var tb = t.GetComponent<TextBase>();
+            if (tb == null) tb = t.gameObject.AddComponent<TextBase>();
+            tb.size = baseSize; tb.w = w; tb.h = h;
+            int target = Mathf.RoundToInt(baseSize * k);
+            bool single = h < baseSize * 2.4f;
+            if (single) target = Mathf.Min(target, Mathf.FloorToInt(h / 1.18f));
+            string s = t.text;
+            if (string.IsNullOrEmpty(s))
+            {
+                // text arrives later: grow a little less so longer values still fit
+                target = Mathf.Min(target, Mathf.RoundToInt(baseSize * (1f + (k - 1f) * 0.6f)));
+                t.fontSize = Mathf.Max(baseSize, target);
+                return;
+            }
+            var gen = t.cachedTextGeneratorForLayout;
+            for (int sz = target; sz > baseSize; sz--)
+            {
+                var gs = t.GetGenerationSettings(new Vector2(w, single ? 100000f : h));
+                gs.fontSize = sz;
+                gs.scaleFactor = 1f;
+                gs.resizeTextForBestFit = false;
+                bool fits;
+                if (single || t.horizontalOverflow == HorizontalWrapMode.Overflow)
+                {
+                    gs.horizontalOverflow = HorizontalWrapMode.Overflow;
+                    fits = gen.GetPreferredWidth(s, gs) <= w + 0.5f;
+                }
+                else
+                {
+                    gs.horizontalOverflow = HorizontalWrapMode.Wrap;
+                    fits = gen.GetPreferredHeight(s, gs) <= h + 0.5f;
+                }
+                if (fits) { t.fontSize = sz; return; }
+            }
+            t.fontSize = baseSize;
+        }
+
+        /// <summary>Changes a label's text and re-fits its size (buttons whose label changes).</summary>
+        public static void SetText(Text t, string s)
+        {
+            if (t == null) return;
+            t.text = s ?? "";
+            var tb = t.GetComponent<TextBase>();
+            if (tb != null) Grow(t, tb.size, tb.w, tb.h);
         }
 
         /// <summary>Single-line label that shortens with "..." and shows the full text on hover.</summary>
@@ -98,7 +156,7 @@ namespace FTM
         {
             var t = Label(parent, text, size, bold, color, x, y, w, h, anchor);
             t.horizontalOverflow = HorizontalWrapMode.Overflow;
-            string shortText = Truncate(text ?? "", t.font, size, w);
+            string shortText = Truncate(text ?? "", t.font, t.fontSize, w);
             t.text = shortText;
             if (shortText != text)
             {

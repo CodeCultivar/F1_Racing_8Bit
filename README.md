@@ -15,6 +15,8 @@ your two cars race on real circuit shapes while you make the strategy calls.
   follow-camera view, team radio, and you can override the coordinator's pit calls, tyres and driving style.
 - **Race control:** weather with forecasts and intermediates/wets, yellow flags, Virtual Safety Car,
   Safety Car, red flags, track limits and stewards' penalties.
+- **Built for phones in landscape:** landscape only (either way round), fills the whole iPhone screen
+  edge to edge, and a Text Size setting (Normal / Large / Extra Large — phones default to Extra Large).
 - **Endless careers:** at the end of every season, contracts expire, drivers age and develop or retire,
   rookies arrive, rivals develop their cars, and the Next Year Car Fund builds next season's car.
 
