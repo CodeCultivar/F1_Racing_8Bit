@@ -116,20 +116,20 @@ namespace FTM
             Vector2 a, b;
             if (car.status == 1 || car.status == 2 || car.status == 5)
             {
-                float ps = Mathf.Min(t.pitLen, car.pitS + (car.status == 1 ? car.speed * lead : 0));
+                float ps = Mathf.Min(t.pitLen, car.vInit ? car.vPit : car.pitS + (car.status == 1 ? car.speed * lead : 0));
                 a = t.PitPos(ps);
                 b = t.PitPos(Mathf.Min(t.pitLen, ps + 4f));
                 if ((b - a).sqrMagnitude < 0.01f) b = a + (t.PitPos(ps) - t.PitPos(Mathf.Max(0, ps - 4f)));
             }
             else
             {
-                double drawDist = car.dist + (car.status == 0 ? car.speed * lead : 0);
+                double drawDist = car.vInit ? car.vDist : car.dist + (car.status == 0 ? car.speed * lead : 0);
                 a = t.Pos(drawDist);
                 b = t.Pos(drawDist + 4.0);
                 int i = Mathf.Clamp((int)(t.Wrap(car.dist) / t.step), 0, t.n - 1);
                 float lateral = 0;
                 if (car.dist < 0) lateral = car.grid % 2 == 0 ? 3f : -3f;          // two-wide grid
-                else if (car.overtaking) lateral = 3f;                              // side by side while passing
+                else lateral = car.vLat;                                            // eases out to the side while passing
                 a += t.normalIn[i] * lateral; b += t.normalIn[i] * lateral;
             }
             pos = W(a);
