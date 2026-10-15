@@ -86,15 +86,36 @@ namespace FTM
             var career = GameApp.I.Career;
             int level = Rules.DifficultyIndex(career);
             int startLevel = level;
-            float extra = career != null ? 130 : 0;
+            int textSize = Theme.TextScaleIndex, startText = textSize;
+            float extra = (career != null ? 130 : 0) + 110;
             var w = GameApp.I.OpenWindow("SETTINGS", 900, 220 + extra, "APPLY", win =>
             {
                 SaveSystem.SaveAudio(a);
+                bool textChanged = textSize != startText;
+                if (textChanged) Theme.TextScaleIndex = textSize;
                 if (career != null && level != startLevel)
-                    GameApp.I.Commit(cs => cs.difficulty = level, () => { win.Close(); Refresh(); });
-                else win.Close();
+                    GameApp.I.Commit(cs => cs.difficulty = level, () => { win.Close(); GameApp.I.RefreshCurrent(); });
+                else { win.Close(); if (textChanged) GameApp.I.RefreshCurrent(); }
             });
             float bw = w.bodyWidth;
+            // text size (this device, every save)
+            float ty = career != null ? 130 : 0;
+            Ui.Label(w.body, "TEXT SIZE", Theme.Body, true, Theme.TextPrimary, 0, ty, bw, 28);
+            var sizeRow = Ui.Group(w.body, "TextSize", 0, ty + 34, bw, 48);
+            System.Action drawSize = null;
+            drawSize = () =>
+            {
+                Ui.Clear(sizeRow);
+                float sw = (bw - 16) / 3f;
+                for (int i = 0; i < 3; i++)
+                {
+                    int idx = i;
+                    var b = Ui.Button(sizeRow, Theme.TextScaleNames[i], BtnStyle.Dark, i * (sw + 8), 0, sw, 44, () => { textSize = idx; drawSize(); }, 15);
+                    b.SetActive(textSize == idx);
+                }
+            };
+            drawSize();
+            Ui.Box(w.body, Theme.EmptyBar, 0, ty + 96, bw, 2);
             if (career != null)
             {
                 var levelRow = Ui.Group(w.body, "Level", 0, 0, bw, 50);

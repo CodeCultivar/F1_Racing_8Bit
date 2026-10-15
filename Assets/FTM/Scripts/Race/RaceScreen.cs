@@ -568,11 +568,47 @@ namespace FTM
         /// <summary>Sim seconds since the last simulation step: used to draw cars smoothly between steps.</summary>
         float Lead { get { return (runner != null && s.speed > 0 && s.phase == 2 && !s.simulating) ? Mathf.Min(runner.acc, RaceSim.TickSeconds) : 0f; } }
 
+        /// <summary>
+        /// Moves every car's drawn position along the track each frame: it advances at the car's own speed and
+        /// eases toward where the simulation says it is, so cars drive smoothly at 1x-5x instead of hopping
+        /// from step to step (and never slide backwards when they get stuck behind someone).
+        /// </summary>
+        public static void UpdateVisuals(RaceState s, float realDt, float lead)
+        {
+            bool running = s.phase == 2 && s.speed > 0 && !s.simulating;
+            float simDt = running ? realDt * RaceSim.SimSecondsPer1x * s.speed : 0f;
+            float k = 1f - Mathf.Exp(-9f * realDt);
+            float pitLen = t_PitLen(s);
+            foreach (var car in s.cars)
+            {
+                bool inPit = car.status == 1 || car.status == 2 || car.status == 5;
+                bool moving = car.status == 0 || car.status == 1;
+                double target = (inPit ? car.pitS : car.dist) + (moving && running ? car.speed * lead : 0);
+                double cur = inPit ? car.vPit : car.vDist;
+                if (!car.vInit || inPit != car.vInPit || Math.Abs(target - cur) > 250 || target < cur - 30 || car.status >= 3 || (!inPit && car.dist < 0))
+                    cur = target;                                       // first frame, pit entry/exit, restarts, the grid
+                else
+                {
+                    double before = cur;
+                    if (moving) cur += car.speed * simDt;              // keep driving at the car's speed
+                    cur += (target - cur) * k;                          // and settle onto the true position
+                    if (cur < before) cur = before;                     // never roll backwards
+                }
+                if (inPit) car.vPit = Mathf.Min(pitLen, (float)cur); else car.vDist = cur;
+                car.vInPit = inPit;
+                car.vInit = true;
+                float latTarget = car.status == 0 && car.overtaking && car.dist >= 0 ? 3f : 0f;
+                car.vLat = Mathf.MoveTowards(car.vLat, latTarget, realDt * 6f);
+            }
+        }
+
+        static float t_PitLen(RaceState s) { var tr = Track.Load(s.trackId); return tr != null ? tr.pitLen : float.MaxValue; }
+
         Vector2 CarScreen(CarState car)
         {
             if (car.status == 1 || car.status == 2 || car.status == 5)
-                return ToScreen(t.PitPos(Mathf.Min(t.pitLen, car.pitS + (car.status == 1 ? car.speed * Lead : 0))));
-            var p = ToScreen(t.Pos(car.dist + (car.status == 0 && car.dist >= 0 ? car.speed * Lead : 0)));
+                return ToScreen(t.PitPos(Mathf.Min(t.pitLen, car.vInit ? car.vPit : car.pitS)));
+            var p = ToScreen(t.Pos(car.vInit ? car.vDist : car.dist));
             if (car.dist < 0)   // two-wide grid
             {
                 int i = Mathf.Clamp((int)(t.Wrap(car.dist) / t.step), 0, t.n - 1);
@@ -617,12 +653,16 @@ namespace FTM
                 if (gone || garage) { v.line.gameObject.SetActive(false); continue; }
                 Vector2 size = v.tag.sizeDelta;
                 Rect best = default(Rect); bool found = false;
-                foreach (var o in TagOffsets)
+                // keep the tag where it was while that spot is still free, so tags don't flick around
+                for (int k = -1; k < TagOffsets.Length && !found; k++)
                 {
+                    int slot = k < 0 ? car.vTag : k;
+                    if (slot < 0 || slot >= TagOffsets.Length) continue;
+                    var o = TagOffsets[slot];
                     var r = new Rect(p.x + o.x, p.y + o.y, size.x, size.y);
                     r.x = Mathf.Clamp(r.x, 4, CenterW - size.x - 4);
                     r.y = Mathf.Clamp(r.y, 4, TrackH - size.y - 4);
-                    if (!placed.Any(q => q.Overlaps(r))) { best = r; found = true; break; }
+                    if (!placed.Any(q => q.Overlaps(r))) { best = r; found = true; car.vTag = slot; }
                 }
                 if (!found) best = new Rect(Mathf.Clamp(p.x + 10, 4, CenterW - size.x - 4), Mathf.Clamp(p.y - 30, 4, TrackH - size.y - 4), size.x, size.y);
                 placed.Add(best);
@@ -851,6 +891,7 @@ namespace FTM
                 }
                 if (steps >= 400) runner.acc = 0;
             }
+            UpdateVisuals(s, realDt, Lead);
             RefreshTrack();
             if (following) follow.Refresh(selected, realDt, Lead);
             RefreshRaceControl(realDt);

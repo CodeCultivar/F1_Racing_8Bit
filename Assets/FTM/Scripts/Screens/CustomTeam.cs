@@ -33,7 +33,7 @@ namespace FTM
         public void Build(RectTransform root)
         {
             Ui.FillBox(root, Theme.Background);
-            Ui.Box(root, Theme.TopBar, 0, 0, 1920, 80);
+            Ui.Box(root, Theme.TopBar, 0, 0, 1920, 80, "TopBar");
             Ui.Button(root, "BACK", BtnStyle.Dark, 24, 16, 160, 48, Back);
             Ui.Label(root, "BUILD YOUR TEAM", Theme.ScreenTitle, true, Theme.TextPrimary, 0, 0, 1920, 80, TextAnchor.MiddleCenter);
 

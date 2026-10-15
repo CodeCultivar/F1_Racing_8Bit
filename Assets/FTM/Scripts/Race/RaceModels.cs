@@ -176,6 +176,11 @@ namespace FTM
         public bool driveThroughPending;  // car is heading through the pit lane to serve a drive-through
         public float penaltyAdded;   // seconds added to the race time at the finish
         public float penaltyServing; // seconds being served stationary in the box
+        // drawing only (not saved): smoothed position the screen shows, so cars glide instead of jumping
+        [NonSerialized] public bool vInit, vInPit;
+        [NonSerialized] public double vDist;
+        [NonSerialized] public float vPit, vLat;
+        [NonSerialized] public int vTag = -1;
     }
 
     [Serializable]

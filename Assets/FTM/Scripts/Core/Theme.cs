@@ -36,6 +36,30 @@ namespace FTM
         public const int Small = 16;
         public const int BigNumber = 28;
 
+        // Text size setting (Settings window). Phones default to the largest size.
+        public static readonly float[] TextScales = { 1f, 1.2f, 1.4f };
+        public static readonly string[] TextScaleNames = { "NORMAL", "LARGE", "EXTRA LARGE" };
+        static int _textScaleIndex = -1;
+        public static int TextScaleIndex
+        {
+            get
+            {
+                if (_textScaleIndex < 0)
+                {
+                    try { _textScaleIndex = PlayerPrefs.GetInt("ftm_textsize", Application.isMobilePlatform ? 2 : 0); }
+                    catch { _textScaleIndex = 0; }
+                    _textScaleIndex = Mathf.Clamp(_textScaleIndex, 0, TextScales.Length - 1);
+                }
+                return _textScaleIndex;
+            }
+            set
+            {
+                _textScaleIndex = Mathf.Clamp(value, 0, TextScales.Length - 1);
+                try { PlayerPrefs.SetInt("ftm_textsize", _textScaleIndex); PlayerPrefs.Save(); } catch { }
+            }
+        }
+        public static float TextScale { get { return TextScales[TextScaleIndex]; } }
+
         // Layout
         public const float DesignW = 1920f;
         public const float DesignH = 1080f;
