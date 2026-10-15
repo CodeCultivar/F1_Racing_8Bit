@@ -1,0 +1,70 @@
+name: Unity iOS export
+
+# Exports the Unity project as an Xcode project and uploads it as a downloadable
+# artifact. It does NOT compile or sign the app: open Unity-iPhone.xcodeproj in
+# Xcode on a Mac and build/run it from there.
+#
+# Runs manually (Actions tab -> "Unity iOS export" -> Run workflow).
+# To also run on every push to main, add under `on:`:
+#   push:
+#     branches: [main]
+#     paths: ["Assets/**", "Packages/**", "ProjectSettings/**"]
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: unity-ios-export-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  export:
+    name: Export Xcode project
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check Unity license secrets
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        run: |
+          missing=0
+          for name in UNITY_LICENSE UNITY_EMAIL UNITY_PASSWORD; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing repository secret $name (Settings > Secrets and variables > Actions)"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-iOS-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-iOS-
+
+      - name: Export iOS project from Unity
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: iOS
+          # "auto" reads the version from ProjectSettings/ProjectVersion.txt
+          unityVersion: auto
+          buildName: F1_iOS
+          buildsPath: build
+
+      - name: Upload Xcode project
+        uses: actions/upload-artifact@v4
+        with:
+          name: F1_iOS_Xcode_Project
+          path: build/iOS
+          if-no-files-found: error
+          retention-days: 7
